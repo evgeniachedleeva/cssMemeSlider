@@ -1,0 +1,134 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(32, 28, 28);
+}
+p {
+    display: block;
+    color: aliceblue;
+position: absolute;
+bottom: 30px;
+padding-left: 10px;
+font-weight: 100;
+letter-spacing: 1pt;
+text-transform: uppercase;
+font-family: 'Kalam', cursive;
+}
+
+.content {
+    width: 100%;
+    max-width: 800px;
+    height: 800px;
+    overflow: hidden;
+    /* border: 10px solid #000; */
+ }
+
+ .mem {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+ }
+ .controls {
+    position: absolute;
+    bottom: 0;
+    right: -95px;
+    transform: translateX(-50%);
+    display: flex;
+    height: 120px;
+  align-items: center;
+  padding-left:60px;
+    background-color: rgb(32, 28, 28);
+ }
+ .label {
+    width: 20px;
+    height: 20px;
+    margin: 6px;
+    cursor: pointer;
+    background-color: rgba(66, 110, 253, 0.719);
+
+    border-radius: 10px;
+    transition: all 0.4s ease;
+ }
+ .label:hover {
+    opacity: 1;
+    background-color: #fff;
+ }
+
+ input[name="slide"] {
+    position: absolute;
+    visibility: hidden;
+ }
+ .wripper {
+    width: 400%;
+    height: 85%;
+    display: flex;
+    overflow: hidden;
+ }
+ .slide {
+    width: 25%;
+    transition: all 0.6s ease;
+    display: flex;
+    flex-direction: column;
+ }
+ .img {
+    width: 100%;
+    transform: translateY(-250px);
+    /* height: 100%; */
+ }
+
+ #slide_1:checked ~ .s1 {
+    margin-left: 0;
+ }
+
+ #slide_2:checked ~ .s1 {
+    margin-left: -25%;
+ }
+
+ #slide_3:checked ~ .s1 {
+    margin-left: -50%;
+ }
+
+ #slide_4:checked ~ .s1 {
+    margin-left: -75%;
+ }
+
+ input:checked ~ label {
+    background: inherit;
+    border: 2px solid #FFF;
+   }
+
+/* media =====================================*/
+
+@media (max-width: 700px) {
+    .controls {
+        left: 50%;
+        bottom: 70px;
+        height: 30px;
+      padding-left: 0;
+      justify-content: center;
+     }
+     .content {
+        width: 100%;
+        max-width: 500px;
+        height: 800px;
+        overflow: hidden;
+        /* border: 10px solid #000; */
+     }
+     .wripper {
+        width: 400%;
+     }
+     .slide {
+        width: 25%;
+        align-items: center;
+     }
+     .img {
+        width: 100%;
+        transform: translateY(0);
+        /* height: 100%; */
+     }
+}
